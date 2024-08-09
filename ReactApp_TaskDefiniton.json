@@ -1,9 +1,9 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-west-2:590183807048:task-definition/ReactApp_TaskDefiniton:1",
+    "taskDefinitionArn": "arn:aws:ecs:us-west-2:590183807048:task-definition/ReactApp_TaskDefiniton:2",
     "containerDefinitions": [
         {
             "name": "counter-app",
-            "image": "590183807048.dkr.ecr.us-west-2.amazonaws.com/react-conter-app-repo:latest",
+            "image": "590183807048.dkr.ecr.us-west-2.amazonaws.com/react-counter-app-repo:latest",
             "cpu": 0,
             "portMappings": [
                 {
@@ -36,7 +36,7 @@
     "family": "ReactApp_TaskDefiniton",
     "executionRoleArn": "arn:aws:iam::590183807048:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 1,
+    "revision": 2,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -73,13 +73,13 @@
     "requiresCompatibilities": [
         "FARGATE"
     ],
-    "cpu": "512",
-    "memory": "1024",
+    "cpu": "1024",
+    "memory": "3072",
     "runtimePlatform": {
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2024-08-09T16:09:51.168Z",
+    "registeredAt": "2024-08-09T16:41:18.507Z",
     "registeredBy": "arn:aws:iam::590183807048:user/riddhi",
     "tags": []
 }
