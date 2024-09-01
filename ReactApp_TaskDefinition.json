@@ -1,9 +1,9 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-west-2:590183807048:task-definition/ReactApp_TaskDefiniton:2",
+    "taskDefinitionArn": "arn:aws:ecs:us-west-2:533267406472:task-definition/ReactApp-TaskDefinition:2",
     "containerDefinitions": [
         {
-            "name": "counter-app",
-            "image": "590183807048.dkr.ecr.us-west-2.amazonaws.com/react-counter-app-repo:latest",
+            "name": "Counter-app",
+            "image": "533267406472.dkr.ecr.us-west-2.amazonaws.com/react-counter-app-repo",
             "cpu": 0,
             "portMappings": [
                 {
@@ -23,8 +23,10 @@
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
-                    "awslogs-group": "/ecs/ReactApp_TaskDefiniton",
+                    "awslogs-group": "/ecs/ReactApp-TaskDefinition",
+                    "mode": "non-blocking",
                     "awslogs-create-group": "true",
+                    "max-buffer-size": "25m",
                     "awslogs-region": "us-west-2",
                     "awslogs-stream-prefix": "ecs"
                 },
@@ -33,8 +35,8 @@
             "systemControls": []
         }
     ],
-    "family": "ReactApp_TaskDefiniton",
-    "executionRoleArn": "arn:aws:iam::590183807048:role/ecsTaskExecutionRole",
+    "family": "ReactApp-TaskDefinition",
+    "executionRoleArn": "arn:aws:iam::533267406472:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
     "revision": 2,
     "volumes": [],
@@ -51,6 +53,9 @@
         },
         {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.28"
         },
         {
             "name": "ecs.capability.execution-role-ecr-pull"
@@ -73,13 +78,13 @@
     "requiresCompatibilities": [
         "FARGATE"
     ],
-    "cpu": "1024",
-    "memory": "3072",
+    "cpu": "512",
+    "memory": "1024",
     "runtimePlatform": {
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2024-08-09T16:41:18.507Z",
-    "registeredBy": "arn:aws:iam::590183807048:user/riddhi",
+    "registeredAt": "2024-09-01T10:24:01.329Z",
+    "registeredBy": "arn:aws:iam::533267406472:user/anuradha",
     "tags": []
 }
